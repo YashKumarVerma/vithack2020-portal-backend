@@ -1,6 +1,6 @@
 # Coverage reports
 coverage
-
+*.log
 # API keys and secrets
 .env
 
