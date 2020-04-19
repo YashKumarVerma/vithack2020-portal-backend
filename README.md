@@ -1,11 +1,7 @@
-## TypeScript Starter Template
+![VITHack2020](https://raw.githubusercontent.com/shivansh2407/VITHack-Frontend/master/public/assets/images/VitHackLogo.png)
 
-[![Build Status](https://travis-ci.com/introdevs/typescript-template.svg?branch=master)](https://travis-ci.com/introdevs/typescript-template)
+## VIT Hack 2020
 
-A handy boiler plate to set up the following with respective integrations
+Main application to handle VITHack Portal
 
-- [x] typescript
-- [x] eslint
-- [x] prettier
-- [x] mocha
-- [x] chat
+[![Build Status](https://travis-ci.com/YashKumarVerma/vithack2020-portal-backend.svg?token=bdYdpM7ki4qrmdCwJmGf&branch=master)](https://travis-ci.com/YashKumarVerma/vithack2020-portal-backend)
