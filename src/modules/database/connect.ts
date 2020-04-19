@@ -10,8 +10,7 @@ class Database {
   static connect(): void {
     mongoose
       .connect(
-        process.env.DB_CONNECTION_STRING ||
-          'mongodb://localhost:27017/vithack2020',
+        'mongodb+srv://octave:octave@cluster0-izz6b.mongodb.net/test?retryWrites=true&w=majority',
         {
           useNewUrlParser: true,
           useUnifiedTopology: true,
