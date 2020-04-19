@@ -1,11 +1,41 @@
 import { Request } from 'express'
+import fetch from 'node-fetch'
 import { SuccessResponse } from './interface'
 import subscriptionModel from './schema'
 import logger from '../logger/winston'
 
 class subscriptionHandler {
   static add(req: Request) {
-    return new Promise<SuccessResponse>((resolve, reject) => {
+    return new Promise<SuccessResponse>(async (resolve, reject) => {
+      // check for token
+      if (!req.body.token) {
+        reject({
+          error: true,
+          message: 'unauthorized request',
+        })
+      }
+
+      // checking authenticiy of request
+      const url = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${req.body.token}`
+      await fetch(url, { method: 'post' })
+        .then((response: any) => response.json())
+        .then((googleResponse: any) => {
+          if (!googleResponse.success) {
+            reject({
+              error: true,
+              message: 'bot behavior detected',
+              payload: googleResponse,
+            })
+          }
+        })
+        .catch((error: any) =>
+          reject({
+            error: true,
+            message: 'Error contacting recaptcha server',
+          }),
+        )
+
+      //   check if email passed
       if (!req.body.email) {
         reject({
           error: true,
