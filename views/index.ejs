@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ReCaptcha !</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://www.google.com/recaptcha/api.js?render=<%= siteKey %>"></script>
+<script>
+	grecaptcha.ready(function () {
+		grecaptcha.execute('<%= siteKey %>', { action: 'demo' })
+			.then(function (token) {
+				// this token needs to be sent along with email 
+				console.log(token)
+			});
+	});
+</script>
+
+</html>

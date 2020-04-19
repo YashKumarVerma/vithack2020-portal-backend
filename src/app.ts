@@ -10,7 +10,11 @@ import logger from './modules/logger/winston'
 import database from './modules/database/connect'
 
 // binding routes
+import rootHandler from './modules/root/routes'
 import subscriptionRoutes from './modules/subscription/routes'
+
+// importing templates
+import ejs from 'ejs'
 
 require('dotenv').config()
 
@@ -28,7 +32,9 @@ app.use(
   }),
 )
 app.use(bodyParser.json())
+app.set('view engine', 'ejs')
 
+app.use('/', rootHandler)
 app.use('/subscription', subscriptionRoutes)
 
 // start listening on ports
