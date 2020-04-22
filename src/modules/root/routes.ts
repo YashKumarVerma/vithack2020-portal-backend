@@ -9,7 +9,8 @@ router.get('/', (req: Request, res: Response): void => {
   //   })
   res.json({
     message: 'hephaestus was here',
-    version: '1.0.2',
+    version: '1.0.3',
+    latestChange: 'cors added',
   })
 })
 
