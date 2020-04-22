@@ -21,6 +21,8 @@ require('dotenv').config()
 // create instance of express
 const app = express()
 
+import cors from 'cors'
+
 // define port to start server on
 const port = process.env.PORT || 3000
 database.connect()
@@ -31,6 +33,7 @@ app.use(
     extended: true,
   }),
 )
+app.use(cors())
 app.use(bodyParser.json())
 app.set('view engine', 'ejs')
 

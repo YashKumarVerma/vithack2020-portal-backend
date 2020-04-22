@@ -9,7 +9,7 @@ router.get('/', (req: Request, res: Response): void => {
   //   })
   res.json({
     message: 'hephaestus was here',
-    author: 'yashkumarverma',
+    version: '1.0.2',
   })
 })
 
