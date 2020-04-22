@@ -61,7 +61,7 @@ class subscriptionHandler {
               reject({
                 error: true,
                 payload: error.code,
-                message: 'error in db operation to create a new user',
+                message: 'User Already registered',
               })
             }
 
@@ -69,7 +69,7 @@ class subscriptionHandler {
               logger.error(`Validation: ${error.message}`)
               reject({
                 error: true,
-                message: 'Validation Error',
+                message: 'Invalid Email Passed',
                 payload: error,
               })
             }
