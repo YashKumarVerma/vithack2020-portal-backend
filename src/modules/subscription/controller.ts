@@ -16,7 +16,7 @@ class subscriptionHandler {
       }
 
       // checking authenticiy of request
-      const url = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${req.body.token}`
+      const url = `https://www.google.com/recaptcha/api/siteverify?secret=6LcuSOsUAAAAAEN4Nfa8E5tqJEJs5gh4ZsDKbJIm&response=${req.body.token}`
       await fetch(url, { method: 'post' })
         .then((response: any) => response.json())
         .then((googleResponse: any) => {
