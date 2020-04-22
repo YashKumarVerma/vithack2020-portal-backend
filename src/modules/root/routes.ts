@@ -9,8 +9,8 @@ router.get('/', (req: Request, res: Response): void => {
   //   })
   res.json({
     message: 'hephaestus was here',
-    version: '1.0.3',
-    latestChange: 'cors added',
+    version: '1.0.4',
+    latestChange: 'api keys testing',
   })
 })
 
